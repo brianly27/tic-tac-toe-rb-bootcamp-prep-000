@@ -46,8 +46,16 @@ def turn(board)
     input = gets.strip
     index = input_to_index(input)
   end
-
+  
   player = current_player(board)
   move(board, index, player)
   display_board(board)
+end
+
+def current_player(board)
+  if turn_count(board) %2 == 0
+    return "X"
+  else
+    return "O"
+  end
 end
